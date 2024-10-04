@@ -16,8 +16,8 @@ export default class AuthController {
 
     if (user) {
       const jwt = this.authService.generateToken({
-        id: 1,
-        username: "admin",
+        id: user.Idusuario,
+        username: user.Nombre!,
       });
       return Promise.resolve({ user, jwt });
     }

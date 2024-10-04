@@ -53,7 +53,9 @@ router.get("/companies-data/:Idusuario", async (req, res) => {
 });
 router.get("/company-actions/:nit", async (req, res) => {
     try {
-        const useCaseResult = await get_actions_data_1.default.run(req.params);
+        const useCaseResult = await get_actions_data_1.default.run({
+            nit: req.params.nit,
+        });
         res.status(200).json(useCaseResult);
     }
     catch (error) {
@@ -105,3 +107,4 @@ router.get("/connection-data/:Id", async (req, res) => {
 });
 // Exporta el enrutador
 exports.default = router;
+//# sourceMappingURL=index.js.map

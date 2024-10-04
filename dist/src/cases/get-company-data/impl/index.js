@@ -11,3 +11,4 @@ class CompanyServiceImpl {
     }
 }
 exports.CompanyServiceImpl = CompanyServiceImpl;
+//# sourceMappingURL=index.js.map

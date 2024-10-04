@@ -40,3 +40,4 @@ const usecaseGetConnectionsData = (0, runtime_1.App)(adapterGetConnectionsData((
     dependencies.connectionsService = new impl_1.ConnectionsServiceImpl();
 });
 exports.default = usecaseGetConnectionsData;
+//# sourceMappingURL=index.js.map

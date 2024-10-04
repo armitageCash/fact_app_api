@@ -39,6 +39,7 @@ export const auth: AuthUsecaseType = async (
       message: "Logueado correctamente.",
     };
   } catch (e) {
+    console.log("e", e);
     return {
       data: null,
       message: "Usuario no encontrado",

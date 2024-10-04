@@ -40,3 +40,4 @@ const usecaseGetCompanyData = (0, runtime_1.App)(adapterGetCompanyData((0, expor
     dependencies.companyService = new impl_1.CompanyServiceImpl();
 });
 exports.default = usecaseGetCompanyData;
+//# sourceMappingURL=index.js.map

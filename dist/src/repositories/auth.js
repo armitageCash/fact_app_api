@@ -10,9 +10,10 @@ class AuthRepository extends repository_1.default {
     }
     async findUser(input) {
         return this.database
-            .instance("users") // Especifique el nombre de la tabla aquí
+            .instance("Users") // Especifique el nombre de la tabla aquí
             .where(input)
             .first();
     }
 }
 exports.default = AuthRepository;
+//# sourceMappingURL=auth.js.map

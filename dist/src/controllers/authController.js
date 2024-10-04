@@ -14,8 +14,8 @@ class AuthController {
         const user = await this.authRepository.findUser(params);
         if (user) {
             const jwt = this.authService.generateToken({
-                id: 1,
-                username: "admin",
+                id: user.Idusuario,
+                username: user.Nombre,
             });
             return Promise.resolve({ user, jwt });
         }
@@ -23,3 +23,4 @@ class AuthController {
     }
 }
 exports.default = AuthController;
+//# sourceMappingURL=authController.js.map

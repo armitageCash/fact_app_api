@@ -40,3 +40,4 @@ const usecaseGetActionData = (0, runtime_1.App)(adapterGetActionDetailData((0, e
     dependencies.actionsService = new impl_1.ActionsServiceImpl();
 });
 exports.default = usecaseGetActionData;
+//# sourceMappingURL=index.js.map

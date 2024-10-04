@@ -32,3 +32,4 @@ class CompanyController {
     }
 }
 exports.default = CompanyController;
+//# sourceMappingURL=companyController.js.map

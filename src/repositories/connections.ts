@@ -12,7 +12,7 @@ export default class ConnectionsRepository extends Repository {
   async getConnections(params: Input): Promise<Connection | undefined> {
     try {
       return this.database.instance.raw(
-        "SELECT  * FROM conexiones  WHERE con_Nitempresa = ?",
+        "SELECT  * FROM Conexiones  WHERE con_Nitempresa = ?",
         [params.con_Nitempresa]
       );
     } catch (error) {
@@ -24,7 +24,7 @@ export default class ConnectionsRepository extends Repository {
     params: InputConnection
   ): Promise<Connection | undefined> {
     return this.database.instance.raw(
-      "SELECT  * FROM conexiones  WHERE Id = ?",
+      "SELECT  * FROM Conexiones  WHERE Id = ?",
       [params.Id]
     );
   }

@@ -6,3 +6,4 @@ var usecaseStatus;
     usecaseStatus["Success"] = "success";
     usecaseStatus["Failed"] = "failed";
 })(usecaseStatus || (exports.usecaseStatus = usecaseStatus = {}));
+//# sourceMappingURL=cases.js.map

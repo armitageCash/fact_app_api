@@ -9,10 +9,11 @@ class CompanyRepository extends repository_1.default {
         super();
     }
     async getCompany(params) {
-        return this.database.instance.raw("SELECT * FROM empresa LEFT JOIN empresausuario ON empresa.Nit = empresausuario.Nitempresa WHERE empresausuario.Nitempresa = ?", [params.Nitempresa]);
+        return this.database.instance.raw("SELECT * FROM Empresa LEFT JOIN EmpresaUsuario ON Empresa.Nit = EmpresaUsuario.Nitempresa WHERE EmpresaUsuario.Nitempresa = ?", [params.Nitempresa]);
     }
     async getCompanies(params) {
         return this.database.instance.raw("SELECT EMP.*, U.*, E.* FROM EmpresaUsuario E INNER JOIN Users U ON E.Idusuario = U.Idusuario INNER JOIN Empresa EMP ON EMP.Nit = E.Nitempresa WHERE U.Grupo = (SELECT Grupo FROM Users WHERE Idusuario = ?);", [params.Idusuario]);
     }
 }
 exports.default = CompanyRepository;
+//# sourceMappingURL=company.js.map

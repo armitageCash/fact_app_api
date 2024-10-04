@@ -50,7 +50,7 @@ export const getActionsData: GetActionsDataUsecaseType = async (
   try {
     const response = await actionsService.getActions(params);
     return {
-      data: response || [],
+      data: response || null,
       status: "success",
       message: "Ok",
     };

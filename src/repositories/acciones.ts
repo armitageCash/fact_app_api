@@ -8,9 +8,9 @@ export default class ActionsRepository extends Repository {
     super();
   }
 
-  async getActions(params: Input): Promise<Acciones[] | undefined> {
+  async getActions(params: Input): Promise<any> {
     return this.database.instance.raw(
-      "SELECT * FROM acciones WHERE acciones.Nitempresa = ?",
+      "SELECT * FROM Acciones WHERE Acciones.Nitempresa = ?",
       [params.nit]
     );
   }
@@ -18,7 +18,7 @@ export default class ActionsRepository extends Repository {
   async updateAction(params: InputUpdate): Promise<Acciones | undefined> {
     await this.database.instance.raw(
       `
-  UPDATE acciones
+  UPDATE Acciones
   SET 
     ID = ?,
     Ins_arqueos = ?,
@@ -65,7 +65,7 @@ export default class ActionsRepository extends Repository {
     );
     // Realiza un SELECT para obtener el registro actualizado
     const [updatedAction] = await this.database
-      .instance<Acciones>("acciones")
+      .instance<Acciones>("Acciones")
       .where("Prefijo_caja", params.Acciones.Prefijo_caja)
       .andWhere("Nitempresa", params.Acciones.Nitempresa)
       .select();
@@ -76,7 +76,7 @@ export default class ActionsRepository extends Repository {
 
   async getAction(params: InputDetailed): Promise<Acciones | undefined> {
     return this.database.instance.raw(
-      "SELECT * FROM acciones WHERE acciones.Prefijo_caja = ?",
+      "SELECT * FROM Acciones WHERE Acciones.Prefijo_caja = ?",
       [params.id]
     );
   }

@@ -9,11 +9,11 @@ class ActionsRepository extends repository_1.default {
         super();
     }
     async getActions(params) {
-        return this.database.instance.raw("SELECT * FROM acciones WHERE acciones.Nitempresa = ?", [params.nit]);
+        return this.database.instance.raw("SELECT * FROM Acciones WHERE Acciones.Nitempresa = ?", [params.nit]);
     }
     async updateAction(params) {
         await this.database.instance.raw(`
-  UPDATE acciones
+  UPDATE Acciones
   SET 
     ID = ?,
     Ins_arqueos = ?,
@@ -58,7 +58,7 @@ class ActionsRepository extends repository_1.default {
         ]);
         // Realiza un SELECT para obtener el registro actualizado
         const [updatedAction] = await this.database
-            .instance("acciones")
+            .instance("Acciones")
             .where("Prefijo_caja", params.Acciones.Prefijo_caja)
             .andWhere("Nitempresa", params.Acciones.Nitempresa)
             .select();
@@ -66,7 +66,8 @@ class ActionsRepository extends repository_1.default {
         return updatedAction || undefined;
     }
     async getAction(params) {
-        return this.database.instance.raw("SELECT * FROM acciones WHERE acciones.Prefijo_caja = ?", [params.id]);
+        return this.database.instance.raw("SELECT * FROM Acciones WHERE Acciones.Prefijo_caja = ?", [params.id]);
     }
 }
 exports.default = ActionsRepository;
+//# sourceMappingURL=acciones.js.map

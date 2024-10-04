@@ -10,14 +10,15 @@ class ConnectionsRepository extends repository_1.default {
     }
     async getConnections(params) {
         try {
-            return this.database.instance.raw("SELECT  * FROM conexiones  WHERE con_Nitempresa = ?", [params.con_Nitempresa]);
+            return this.database.instance.raw("SELECT  * FROM Conexiones  WHERE con_Nitempresa = ?", [params.con_Nitempresa]);
         }
         catch (error) {
             console.log(error);
         }
     }
     async getConnection(params) {
-        return this.database.instance.raw("SELECT  * FROM conexiones  WHERE Id = ?", [params.Id]);
+        return this.database.instance.raw("SELECT  * FROM Conexiones  WHERE Id = ?", [params.Id]);
     }
 }
 exports.default = ConnectionsRepository;
+//# sourceMappingURL=connections.js.map

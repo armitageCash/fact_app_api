@@ -10,7 +10,7 @@ export default class CompanyRepository extends Repository {
 
   async getCompany(params: Input): Promise<Company | undefined> {
     return this.database.instance.raw(
-      "SELECT * FROM empresa LEFT JOIN empresausuario ON empresa.Nit = empresausuario.Nitempresa WHERE empresausuario.Nitempresa = ?",
+      "SELECT * FROM Empresa LEFT JOIN EmpresaUsuario ON Empresa.Nit = EmpresaUsuario.Nitempresa WHERE EmpresaUsuario.Nitempresa = ?",
       [params.Nitempresa]
     );
   }

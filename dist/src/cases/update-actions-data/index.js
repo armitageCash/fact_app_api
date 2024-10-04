@@ -40,3 +40,4 @@ const usecaseUpdateActionsData = (0, runtime_1.App)(adapterUpdateActionsData((0,
     dependencies.actionsService = new impl_1.ActionsServiceImpl();
 });
 exports.default = usecaseUpdateActionsData;
+//# sourceMappingURL=index.js.map

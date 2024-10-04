@@ -10,8 +10,8 @@ class ActionsController {
     }
     async getActions(params) {
         try {
-            const company = await this.actionsRepository.getActions(params);
-            return Promise.resolve(company);
+            const actions = await this.actionsRepository.getActions(params);
+            return Promise.resolve(actions[0]);
         }
         catch (error) {
             console.log("error getting actions", error);
@@ -38,3 +38,4 @@ class ActionsController {
     }
 }
 exports.default = ActionsController;
+//# sourceMappingURL=actionsController.js.map

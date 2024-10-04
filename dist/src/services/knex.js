@@ -7,11 +7,12 @@ const knex_1 = __importDefault(require("knex"));
 class DatabaseService {
     constructor() {
         const dbConfig = {
-            client: "mysql", // Cambia 'mysql' a 'mysql2' para el driver más reciente
+            client: "mysql2", // Cambia 'mysql' a 'mysql2' para el driver más reciente
             connection: {
                 host: process.env.DB_HOST || "localhost",
-                port: process.env.DB_PORT || 3306,
+                port: Number(process.env.DB_PORT) || 3306,
                 user: process.env.DB_USER || "root",
+                password: process.env.DB_PASS,
                 database: process.env.DATABASE || "fact_app",
             },
             pool: {
@@ -23,3 +24,4 @@ class DatabaseService {
     }
 }
 exports.default = DatabaseService;
+//# sourceMappingURL=knex.js.map
