@@ -11,7 +11,7 @@ export default class ActionsController {
     this.actionsRepository = new ActionsRepository();
   }
 
-  async getActions(params: Input): Promise<Acciones | undefined> {
+  async getActions(params: Input): Promise<Acciones[] | undefined> {
     try {
       const company = await this.actionsRepository.getActions(params);
       return Promise.resolve(company);

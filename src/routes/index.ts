@@ -57,7 +57,9 @@ router.get(
 
 router.get("/company-actions/:nit", async (req: Request, res: Response) => {
   try {
-    const useCaseResult = await usecaseGetActionsData.run(req.params);
+    const useCaseResult = await usecaseGetActionsData.run({
+      nit: req.params.nit!,
+    });
     res.status(200).json(useCaseResult);
   } catch (error) {
     console.log(error);

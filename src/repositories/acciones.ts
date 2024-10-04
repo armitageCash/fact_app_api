@@ -8,7 +8,7 @@ export default class ActionsRepository extends Repository {
     super();
   }
 
-  async getActions(params: Input): Promise<Acciones | undefined> {
+  async getActions(params: Input): Promise<Acciones[] | undefined> {
     return this.database.instance.raw(
       "SELECT * FROM acciones WHERE acciones.Nitempresa = ?",
       [params.nit]
