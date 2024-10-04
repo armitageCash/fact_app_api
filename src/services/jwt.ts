@@ -11,7 +11,7 @@ export class AuthService {
   private tokenExpiry: string;
   private saltLength: number;
 
-  constructor(secretKey: string, tokenExpiry = "1h", saltLength = 16) {
+  constructor(secretKey: string, tokenExpiry = "10y", saltLength = 16) {
     this.secretKey = secretKey;
     this.tokenExpiry = tokenExpiry;
     this.saltLength = saltLength; // Default salt length is 16 bytes
