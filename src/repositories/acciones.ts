@@ -38,7 +38,7 @@ export default class ActionsRepository extends Repository {
     Fecha1 = ?,
     Fecha2 = ?,
     Auditar = ?
-  WHERE Prefijo_caja = ? AND Nitempresa = ?;
+  WHERE Prefijo_caja = ? AND Nitempresa = ? AND Almacen = ?;
   `,
       [
         0, // ID
