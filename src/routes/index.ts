@@ -77,7 +77,7 @@ router.get("/company-action/:id", async (req: Request, res: Response) => {
   }
 });
 
-router.put("/company-action/:id", async (req: Request, res: Response) => {
+router.put("/company-action", async (req: Request, res: Response) => {
   try {
     const useCaseResult = await usecaseUpdateActionsData.run({
       Acciones: req.body,

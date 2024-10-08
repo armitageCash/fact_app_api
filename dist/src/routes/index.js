@@ -73,7 +73,7 @@ router.get("/company-action/:id", async (req, res) => {
         res.status(500).json(error);
     }
 });
-router.put("/company-action/:id", async (req, res) => {
+router.put("/company-action", async (req, res) => {
     try {
         const useCaseResult = await update_actions_data_1.default.run({
             Acciones: req.body,
