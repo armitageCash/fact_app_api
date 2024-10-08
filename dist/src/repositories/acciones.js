@@ -19,7 +19,6 @@ class ActionsRepository extends repository_1.default {
       Eje_accion = ?,
       Accion = ?,
       Comp_ventas = ?,
-      Usuario = ?,
       Accion1 = ?,
       Accion2 = ?,
       Accion3 = ?,
@@ -35,7 +34,6 @@ class ActionsRepository extends repository_1.default {
             params.Acciones.Eje_accion, // Eje_accion
             params.Acciones.Accion, // Accion
             params.Acciones.Comp_ventas, // Comp_ventas
-            params.Acciones.Usuario, // Usuario
             params.Acciones.Accion1, // Accion1
             params.Acciones.Accion2, // Accion2
             params.Acciones.Accion3, // Accion3
