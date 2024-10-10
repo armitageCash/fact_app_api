@@ -13,6 +13,8 @@ const get_actions_data_1 = __importDefault(require("@/cases/get-actions-data"));
 const update_actions_data_1 = __importDefault(require("@/cases/update-actions-data"));
 const get_actions_detail_1 = __importDefault(require("@/cases/get-actions-detail"));
 const cases_1 = require("@/shared/cases");
+const update_actions_state_1 = __importDefault(require("@/cases/update-actions-state"));
+const get_action_data_1 = __importDefault(require("@/cases/get-action-data"));
 // Crea una instancia del enrutador
 const router = (0, express_1.Router)();
 // Define una ruta GET básica
@@ -73,9 +75,33 @@ router.get("/company-action/:id", async (req, res) => {
         res.status(500).json(error);
     }
 });
+router.get("/company-action-nit/:nit", async (req, res) => {
+    try {
+        const useCaseResult = await get_action_data_1.default.run({
+            nit: req.params.nit,
+        });
+        res.status(200).json(useCaseResult);
+    }
+    catch (error) {
+        console.log(error);
+        res.status(500).json(error);
+    }
+});
 router.put("/company-action", async (req, res) => {
     try {
         const useCaseResult = await update_actions_data_1.default.run({
+            Acciones: req.body,
+        });
+        res.status(200).json(useCaseResult);
+    }
+    catch (error) {
+        console.log(error);
+        res.status(500).json(error);
+    }
+});
+router.put("/company-action-state", async (req, res) => {
+    try {
+        const useCaseResult = await update_actions_state_1.default.run({
             Acciones: req.body,
         });
         res.status(200).json(useCaseResult);

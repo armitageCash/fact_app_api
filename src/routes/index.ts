@@ -8,6 +8,8 @@ import usecaseGetActionsData from "@/cases/get-actions-data";
 import usecaseUpdateActionsData from "@/cases/update-actions-data";
 import usecaseGetActionData from "@/cases/get-actions-detail";
 import { usecaseStatus } from "@/shared/cases";
+import usecaseUpdateActionsState from "@/cases/update-actions-state";
+import usecaseGetActionDataBiNit from "@/cases/get-action-data";
 // Crea una instancia del enrutador
 const router = Router();
 
@@ -77,9 +79,33 @@ router.get("/company-action/:id", async (req: Request, res: Response) => {
   }
 });
 
+router.get("/company-action-nit/:nit", async (req: Request, res: Response) => {
+  try {
+    const useCaseResult = await usecaseGetActionDataBiNit.run({
+      nit: req.params.nit,
+    });
+    res.status(200).json(useCaseResult);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json(error);
+  }
+});
+
 router.put("/company-action", async (req: Request, res: Response) => {
   try {
     const useCaseResult = await usecaseUpdateActionsData.run({
+      Acciones: req.body,
+    });
+    res.status(200).json(useCaseResult);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json(error);
+  }
+});
+
+router.put("/company-action-state", async (req: Request, res: Response) => {
+  try {
+    const useCaseResult = await usecaseUpdateActionsState.run({
       Acciones: req.body,
     });
     res.status(200).json(useCaseResult);

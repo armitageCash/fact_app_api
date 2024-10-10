@@ -7,7 +7,7 @@ exports.AuthService = void 0;
 const crypto_1 = __importDefault(require("crypto"));
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 class AuthService {
-    constructor(secretKey, tokenExpiry = "10y", saltLength = 16) {
+    constructor(secretKey, tokenExpiry = "1d", saltLength = 16) {
         this.secretKey = secretKey;
         this.tokenExpiry = tokenExpiry;
         this.saltLength = saltLength; // Default salt length is 16 bytes

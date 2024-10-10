@@ -55,8 +55,33 @@ class ActionsRepository extends repository_1.default {
         // Retorna el registro actualizado o undefined si no se encuentra
         return updatedAction;
     }
+    async updateActionState(params) {
+        await this.database.instance.raw(`
+    UPDATE Acciones
+    SET 
+      Tope = ?,
+      Estado = ?
+    WHERE Nitempresa = ?
+    `, [
+            params.Acciones.Tope, // Tope
+            params.Acciones.Estado, // Estado
+            params.Acciones.Nitempresa, // Nitempresa
+        ]);
+        // Realiza un SELECT para obtener el registro actualizado
+        const [updatedAction] = await this.database
+            .instance("Acciones")
+            .where("Nitempresa", params.Acciones.Nitempresa)
+            .select();
+        // Retorna el registro actualizado o undefined si no se encuentra
+        return updatedAction;
+    }
     async getAction(params) {
         return this.database.instance.raw("SELECT * FROM Acciones WHERE Acciones.Prefijo_caja = ?", [params.id]);
+    }
+    async getActionbyNit(params) {
+        const result = await this.database.instance.raw("SELECT * FROM Acciones WHERE Acciones.Nitempresa = ? LIMIT 1", [params.nit]);
+        // En Knex.js, el resultado de raw devuelve un array. Accede al primer elemento.
+        return result[0]?.[0];
     }
 }
 exports.default = ActionsRepository;

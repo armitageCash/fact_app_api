@@ -26,9 +26,28 @@ class ActionsController {
             console.log("error getting actions", error);
         }
     }
+    async getActionByNit(params) {
+        try {
+            const Acciones = await this.actionsRepository.getActionbyNit(params);
+            return Promise.resolve(Acciones);
+        }
+        catch (error) {
+            console.log("error getting actions", error);
+        }
+    }
     async updateAction(params) {
         try {
             const Acciones = await this.actionsRepository.updateAction(params);
+            return Promise.resolve(Acciones);
+        }
+        catch (error) {
+            console.log(error);
+            console.log("Error updating action", error);
+        }
+    }
+    async updateActionState(params) {
+        try {
+            const Acciones = await this.actionsRepository.updateActionState(params);
             return Promise.resolve(Acciones);
         }
         catch (error) {

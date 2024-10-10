@@ -4,6 +4,7 @@
     {
       "type": "node",
       "request": "launch",
+      "preLaunchTask": "npm: build",
       "name": "Debug TypeScript in Node.js",
       "runtimeArgs": ["-r", "ts-node/register"],
       "args": ["${workspaceFolder}/src/index.ts"],
