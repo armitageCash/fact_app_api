@@ -3,7 +3,7 @@ import DatabaseService from "@/services/knex";
 export default abstract class Repository {
   database: DatabaseService;
   constructor() {
-    this.database = new DatabaseService();
+    this.database = DatabaseService.getInstance();
   }
 
   async find(query: string): Promise<[]> {

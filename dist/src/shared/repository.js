@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const knex_1 = __importDefault(require("@/services/knex"));
 class Repository {
     constructor() {
-        this.database = new knex_1.default();
+        this.database = knex_1.default.getInstance();
     }
     async find(query) {
         return [];
